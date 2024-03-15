@@ -7,7 +7,7 @@ import Button from '@/components/ui/button/Button'
 
 import style from '@/components/setting/setting.module.scss'
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
   const [isOn, setIsOn] = useState<boolean | null>(null)
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const page: React.FC = () => {
   )
 }
 
-export default page
+export default Page
 
 const spring = {
   type: 'spring',

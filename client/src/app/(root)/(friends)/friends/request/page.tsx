@@ -15,7 +15,7 @@ import avatarIcon from '/public/avatar.jpeg'
 
 import style from '@/components/friends/friends.module.scss'
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
   const meId: string = useAppSelector((state) => state.user.userData._id)
   const {
     data: users,
@@ -79,4 +79,4 @@ const page: React.FC = () => {
   )
 }
 
-export default page
+export default Page

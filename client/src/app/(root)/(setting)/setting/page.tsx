@@ -13,7 +13,7 @@ import avatarIcon from '/public/avatar.jpeg'
 
 import style from '@/components/setting/setting.module.scss'
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
   const meData: UserData = useAppSelector((state) => state.user.userData)
   const avatarTypes: string[] = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif']
 
@@ -173,4 +173,4 @@ const page: React.FC = () => {
   )
 }
 
-export default page
+export default Page

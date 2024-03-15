@@ -10,7 +10,7 @@ import { useFriendManipulator } from '@/hooks/useFriendManipulator'
 
 import style from '@/components/friends/friends.module.scss'
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
   const meId: string = useAppSelector((state) => state.user.userData._id)
   const {
     register,
@@ -101,4 +101,4 @@ const page: React.FC = () => {
   )
 }
 
-export default page
+export default Page

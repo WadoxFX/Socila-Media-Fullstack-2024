@@ -9,7 +9,7 @@ import { useAppSelector } from '@/store/hooks'
 
 import style from '@/styles/tape.module.scss'
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
   const meId: string = useAppSelector((state) => state.user.userData._id)
   const {
     data: posts,
@@ -55,4 +55,4 @@ const page: React.FC = () => {
   )
 }
 
-export default page
+export default Page

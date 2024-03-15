@@ -14,26 +14,28 @@ import closeIcon from '/public/svg/close.svg'
 import style from './popup.module.scss'
 
 const Popup: React.FC = () => {
-  const [message, setMessage] = useState<Message | null>()
+  const [message, setMessage] = useState<Message | null>(null)
 
   useEffect(() => {
-    socket.on('popup_message', (data: Message) => {
+    const handlePopupMessage = (data: Message) => {
       setMessage(data)
-    })
-  }, [socket])
+    }
+    socket.on('popup_message', handlePopupMessage)
+
+    return () => {
+      socket.off('popup_message', handlePopupMessage)
+    }
+  }, [])
 
   const closePopup = () => setMessage(null)
 
   const path: string = usePathname()
+
   if (typeof window !== 'undefined') {
     const showNotices: string | null = localStorage.getItem('showNotices')
 
-    if (showNotices === 'false') {
+    if (showNotices === 'false' || (message && path === `/chats/${message.room}`)) {
       return null
-    }
-
-    if (message && path === `/chats/${message.room}`) {
-      setMessage(null)
     }
   }
 
@@ -43,7 +45,6 @@ const Popup: React.FC = () => {
 export default Popup
 
 const Message: React.FC<UIPopup> = ({ message, path, closePopup }) => {
-  if (typeof window === 'undefined') return null
   const [mobile, setMobile] = useState<boolean>(window.innerWidth <= 768)
 
   useEffect(() => {

@@ -16,7 +16,7 @@ import sendIcon from '/public/svg/send.svg'
 
 import style from '@/components/chats/chat.module.scss'
 
-const page: React.FC<Params> = ({ params: { id } }) => {
+const Page: React.FC<Params> = ({ params: { id } }) => {
   const meData: UserData = useAppSelector((state) => state.user.userData)
   const [companion, setCompanion] = useState<Companion | null>(null)
   const [messages, setMessages] = useState<Message[]>([])
@@ -171,4 +171,4 @@ const page: React.FC<Params> = ({ params: { id } }) => {
   )
 }
 
-export default page
+export default Page
