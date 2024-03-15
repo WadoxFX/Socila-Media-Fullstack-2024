@@ -1,6 +1,6 @@
-# Next Full-Stack Social Media 2024
+# Next.js + Node.js Full-Stack Social Media 2024
 
-![](./assets/4.png)
+![](./client/assets/4.png)
 
 **Technology Stack**
 
@@ -55,45 +55,45 @@
 
 <p>The project uses the "bcrypt" library, which encrypts the data before sending it to the database, and also uses JWT.</p>
 
-![](./assets/0.png)
+![](./client/assets/0.png)
 
 ## Project gallery "PC version"
 
-![](./assets/1.png)
+![](./client/assets/1.png)
 
-![](./assets/2.png)
+![](./client/assets/2.png)
 
-![](./assets/3.png)
+![](./client/assets/3.png)
 
-![](./assets/4.png)
+![](./client/assets/4.png)
 
-![](./assets/5.png)
+![](./client/assets/5.png)
 
-![](./assets/6.png)
+![](./client/assets/6.png)
 
-![](./assets/7.png)
+![](./client/assets/7.png)
 
-![](./assets/8.png)
+![](./client/assets/8.png)
 
-![](./assets/9.png)
+![](./client/assets/9.png)
 
-![](./assets/10.png)
+![](./client/assets/10.png)
 
-![](./assets/11.png)
+![](./client/assets/11.png)
 
 ## Project gallery "Mobile version"
 
-![](./assets/12.png)
+![](./client/assets/12.png)
 
-![](./assets/13.png)
+![](./client/assets/13.png)
 
-![](./assets/14.png)
+![](./client/assets/14.png)
 
-![](./assets/15.png)
+![](./client/assets/15.png)
 
-![](./assets/16.png)
+![](./client/assets/16.png)
 
-![](./assets/17.png)
+![](./client/assets/17.png)
 
 ## Getting Started
 
