@@ -2,7 +2,7 @@
 const nextConfig = {
   env: {
     clientUrl: 'http://localhost:3000',
-    serverUrl: 'http://localhost:8080/',
+    serverUrl: 'https://social-media-server-ashy.vercel.app/',
   },
   images: {
     remotePatterns: [{ hostname: 'localhost' }],
