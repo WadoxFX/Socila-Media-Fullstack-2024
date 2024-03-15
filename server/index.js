@@ -19,8 +19,8 @@ app.use(cookieParser())
 app.use(
   cors({
     origin: ['https://socila-media-client.vercel.app'],
+    methods: ['POST', 'GET'],
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 )
 app.use('/images', express.static(path.join(__dirname, 'images')))
