@@ -1,0 +1,95 @@
+.chat_aside_container {
+  form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 24px;
+
+    input {
+      background: #eee;
+      padding: 14px;
+      padding-right: 50px;
+      border-radius: 50px;
+      width: 100%;
+    }
+
+    button {
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+      background: #ffffff;
+    }
+  }
+
+  ul {
+    display: flex;
+    grid-gap: 12px;
+    gap: 16px;
+    flex-direction: column;
+
+    .no_chats {
+      text-align: center;
+    }
+
+    li {
+      display: grid;
+      grid-template-columns: auto max-content;
+      align-items: start;
+
+      a {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+
+        .user_icon {
+          aspect-ratio: 1;
+          width: 48px;
+          height: auto;
+          border-radius: 50px;
+          object-fit: cover;
+          background-size: cover;
+        }
+
+        .user_info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+          gap: 6px;
+
+          .full_name {
+            display: flex;
+            align-items: center;
+            text-transform: capitalize;
+            color: var(--color-text);
+            gap: 8px;
+            text-transform: capitalize;
+            font-weight: 500;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .last_message {
+            font-size: 16px;
+            color: var(--desc-color);
+            color: #747474;
+            font-size: 14px;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-break: break-word;
+          }
+        }
+      }
+    }
+  }
+}

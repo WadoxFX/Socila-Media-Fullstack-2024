@@ -1,0 +1,50 @@
+.switch {
+  width: 54px;
+  height: 32px;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 50px;
+  padding: 4px;
+  cursor: pointer;
+  background: black;
+  transition: 0.2s;
+}
+
+.switch[data-ison='true'] {
+  justify-content: flex-end;
+}
+
+.switch[data-ison='false'] {
+  background-color: #e4e4e7;
+}
+
+.handle {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 40px;
+}
+
+@media (max-width: 480px) {
+  .switch {
+    width: 64px;
+    height: 30px;
+  }
+
+  .handle {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 376px) {
+  .switch {
+    width: 68px;
+    height: 28px;
+  }
+
+  .handle {
+    width: 20px;
+    height: 20px;
+  }
+}

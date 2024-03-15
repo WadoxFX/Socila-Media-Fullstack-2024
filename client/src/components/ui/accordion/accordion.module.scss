@@ -1,0 +1,42 @@
+.accordion_container {
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 10px;
+
+    li {
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #000;
+        border: 1px solid var(--border-color);
+        padding: 12px 20px;
+        border-radius: 8px;
+
+        .accordion_category {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+      }
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #cdf7ff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    width: 100%;
+
+    .accordion_title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+}

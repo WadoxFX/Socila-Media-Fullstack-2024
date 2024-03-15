@@ -1,0 +1,128 @@
+// aside version
+.aside_friends_title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .active_friends_categorie,
+  .setting_categorie {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    border-radius: 8px;
+    gap: 10px;
+    transition: 0.2s;
+
+    &:hover {
+      background: var(--lightGray-basc);
+    }
+
+    &.active_friends_categorie {
+      background: var(--lightGray-basc);
+    }
+
+    .categorie_title {
+      font-size: var(--font-size);
+      color: var(--color-text);
+    }
+  }
+}
+
+.friends_container {
+  display: grid;
+
+  .friends {
+    display: flex;
+    flex-direction: column;
+    max-width: 640px;
+    width: 100%;
+    gap: 24px;
+    margin: 30px auto;
+    padding: 0 var(--padding-page);
+
+    form {
+      display: grid;
+      grid-template-columns: auto max-content;
+      gap: 10px;
+
+      input {
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-default);
+        padding: 12px 20px;
+        width: 100%;
+      }
+    }
+
+    ul {
+      display: grid;
+      gap: 10px;
+
+      .user {
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        grid-template-columns: auto max-content;
+        gap: 12px;
+
+        .user_container {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          .user_icon {
+            border-radius: 50%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            width: 56px;
+            height: auto;
+          }
+
+          .user_info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .full_name {
+              color: #000;
+              text-transform: capitalize;
+              margin-bottom: 6px;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+
+            .desc {
+              color: #71717a;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+          }
+        }
+
+        .controlers {
+          display: flex;
+          gap: 12px;
+        }
+      }
+
+      .preloader_button {
+        width: 100%;
+        display: flex;
+        margin-top: 46px;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

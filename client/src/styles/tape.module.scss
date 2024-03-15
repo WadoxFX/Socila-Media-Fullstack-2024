@@ -1,0 +1,162 @@
+.tape_container {
+  display: grid;
+
+  .tape_posts {
+    max-width: 468px;
+    width: 100%;
+    gap: 24px;
+    display: grid;
+    margin: 0px auto;
+
+    .worning {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 20px;
+      background: var(--lightGray-basc);
+      border-radius: var(--radius-default);
+      gap: 10px;
+      height: max-content;
+      max-width: 468px;
+
+      .worning_title {
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .worning_desc {
+        color: var(--desc-color);
+        font-size: 16px;
+      }
+    }
+
+    .post_container {
+      display: grid;
+      grid-template-rows: max-content max-content minmax(100px, 468px) max-content;
+      width: 468px;
+
+      hr {
+        background-color: var(--border-color);
+        height: 1px;
+        width: 100%;
+      }
+
+      .post_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        time {
+          color: var(--color-text);
+          font-size: 12px;
+        }
+
+        .user_info {
+          height: auto;
+          display: flex;
+          align-items: center;
+          padding: 8px 0px;
+          min-height: 56px;
+          gap: 12px;
+          z-index: 1;
+
+          .user_icon {
+            aspect-ratio: 1;
+            object-fit: cover;
+            background-size: cover;
+            border-radius: 50px;
+            width: 32px;
+          }
+
+          .user_fullname {
+            color: var(--color-text);
+            display: flex;
+            text-transform: capitalize;
+            gap: 6px;
+          }
+        }
+      }
+    }
+
+    .post_controllers {
+      display: grid;
+      gap: 12px;
+
+      .post_buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0 0;
+
+        .left_buttons {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        color: #71717a;
+
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.post_preloader {
+  position: fixed;
+  height: 100px;
+  top: 0;
+}
+
+.post_loader {
+  height: 100px;
+}
+
+@media (max-width: 468px) {
+  .tape_container {
+    .tape_posts {
+      .worning {
+        margin: 0 12px;
+      }
+
+      .post_container {
+        width: auto;
+
+        .post_header {
+          .user_info {
+            padding: 0;
+            min-height: 0;
+          }
+        }
+
+        .post_header {
+          padding: 12px;
+        }
+
+        .post_controllers {
+          .post_buttons {
+            padding: 12px 12px 0;
+
+            img {
+              width: 24px;
+            }
+          }
+
+          .likes {
+            padding: 0px 12px;
+          }
+
+          p {
+            padding: 0 12px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.slider {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: black;
+  position: relative;
+
+  .slider_clean_btn {
+    top: 14px;
+    right: 20px;
+    z-index: 10;
+    padding: 8px;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    position: absolute;
+    background-color: #eee;
+
+    img {
+      width: 24px;
+      height: auto;
+      transition: 0.2s;
+
+      &:hover {
+        scale: 1.08;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+  }
+}

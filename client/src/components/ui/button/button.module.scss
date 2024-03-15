@@ -1,0 +1,26 @@
+.button {
+  scale: 1;
+  font-weight: 500;
+  transition: 0.2s;
+  position: relative;
+
+  &:active {
+    scale: 0.98;
+  }
+
+  &:disabled {
+    background: #eee;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 376px) {
+  .button {
+    font-size: 14px;
+
+    img {
+      width: 18px;
+      height: auto;
+    }
+  }
+}

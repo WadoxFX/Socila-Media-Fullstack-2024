@@ -1,0 +1,20 @@
+const { Router } = require('express')
+const userController = require('../controllers/userController')
+const upload = require('../middlewares/upload')
+const router = Router()
+
+router.get('/profile/:id', userController.profile)
+router.get('/statistic/:id', userController.statistic)
+router.get('/request/:meId', userController.request)
+router.get('/friends/:meId', userController.friends)
+router.put('/delFriend', userController.delFriend)
+router.put('/confirmFriend', userController.confirmFriend)
+router.put('/delRequest', userController.delRequest)
+router.get('/search', userController.search)
+router.put('/subscribe', userController.subscribe)
+router.put('/unsubscribe', userController.unsubscribe)
+router.put('/addFriend', userController.addFriend)
+router.put('/recallFriend', userController.recallFriend)
+router.put('/editProfile', upload.single('avatar'), userController.editProfile)
+
+module.exports = router

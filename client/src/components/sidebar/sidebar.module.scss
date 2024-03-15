@@ -1,0 +1,131 @@
+.container {
+  height: 100%;
+  position: relative;
+
+  nav {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+
+    .nav_content {
+      display: grid;
+      grid-template-rows: auto max-content;
+      border-right: 1px solid var(--border-color);
+
+      .logout {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        gap: 12px;
+        margin: 10px;
+        padding: 12px;
+        border-radius: 8px;
+      }
+
+      .none_nav_title {
+        display: none;
+      }
+
+      .nav_items {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+
+        .creating_post_button,
+        .active_item,
+        .item {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 12px;
+          border-radius: 8px;
+          cursor: pointer;
+
+          &.active_item {
+            background: var(--lightGray-basc);
+          }
+
+          .nav_title {
+            text-transform: capitalize;
+            width: 160px;
+            color: var(--color-text);
+            font-size: var(--font-size);
+          }
+
+          .user_icon {
+            aspect-ratio: 1;
+            border-radius: 50px;
+            width: 24px;
+            height: auto;
+            object-fit: cover;
+            background-size: cover;
+          }
+        }
+      }
+    }
+
+    .aside_addition {
+      width: 300px;
+      padding: 10px;
+      border-right: 1px solid var(--border-color);
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    nav {
+      .aside_addition {
+        width: 240px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    order: 2;
+    position: sticky;
+    z-index: 777;
+    background-color: #ffffff;
+    bottom: 0;
+
+    nav {
+      grid-template-columns: 1fr;
+      position: relative;
+      height: auto;
+
+      .nav_content {
+        border: none;
+
+        .logout {
+          display: none;
+        }
+
+        .nav_items {
+          height: 72px;
+          align-items: center;
+          border-top: 1px solid var(--border-color);
+          flex-direction: initial;
+          justify-content: space-around;
+
+          .creating_post_button,
+          .active_item,
+          .item {
+            .none_nav_title,
+            .nav_title {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .aside_addition {
+        display: none;
+      }
+    }
+  }
+}

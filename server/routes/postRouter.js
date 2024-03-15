@@ -1,0 +1,23 @@
+const { Router } = require('express')
+const postController = require('../controllers/postController')
+const upload = require('../middlewares/upload')
+const router = Router()
+
+router.post('/create', upload.array('file', 9), postController.create)
+router.delete('/delete', postController.delete)
+router.get('/postList/:userId', postController.postList)
+router.get('/likedList/:userId', postController.likedList)
+router.get('/savedList/:userId', postController.savedList)
+router.put('/addComment', postController.addComment)
+router.get('/comments/:postId', postController.comments)
+router.put('/likeComment', postController.likeComment)
+router.put('/dislikeComment', postController.dislikeComment)
+router.delete('/deleteComment', postController.deleteComment)
+router.get('/data/:postId', postController.data)
+router.put('/like', postController.like)
+router.put('/dislike', postController.dislike)
+router.put('/save', postController.save)
+router.put('/lose', postController.lose)
+router.get('/tape/:id', postController.tape)
+
+module.exports = router

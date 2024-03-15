@@ -1,0 +1,277 @@
+.container {
+  max-width: 956px;
+  min-height: 101vh;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--padding-page);
+
+  .profile {
+    display: grid;
+    justify-content: space-around;
+    padding: 30px 0 40px;
+    gap: 20px;
+    grid-template-columns: auto minmax(100px, 500px);
+
+    .user_icon {
+      aspect-ratio: 1;
+      object-fit: cover;
+      background-size: cover;
+      border-radius: 50%;
+    }
+
+    .user_infos {
+      display: grid;
+      height: max-content;
+      gap: 20px;
+
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 40px;
+        gap: 10px;
+
+        h1 {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          text-transform: capitalize;
+          white-space: nowrap;
+          font-size: 18px;
+        }
+
+        .controlers {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+        }
+      }
+
+      .statistics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 40px;
+        min-height: 20px;
+      }
+
+      .desc {
+        font-size: 16px;
+        color: #71717a;
+        word-break: break-word;
+      }
+    }
+  }
+
+  .tabs {
+    position: relative;
+
+    hr {
+      position: absolute;
+      background: var(--border-color);
+      width: 100%;
+      top: 0;
+      height: 1px;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+
+      .categorie,
+      .active_categorie {
+        padding: 20px;
+        font-size: 14px;
+        gap: 4px;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        border-top: 1px solid #00000000;
+
+        &.active_categorie {
+          border-top: 1px solid #000;
+          z-index: 1;
+        }
+      }
+    }
+
+    .post_container {
+      position: relative;
+
+      .posts {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 4px;
+
+        .post {
+          position: relative;
+
+          .video_icon,
+          .image_icon {
+            aspect-ratio: 1;
+            object-fit: cover;
+            background-size: cover;
+            position: relative;
+            height: 100%;
+            width: 100%;
+
+            &.video_icon {
+              margin-bottom: -4px;
+            }
+          }
+
+          .overlay {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: space-around;
+            background: #00000036;
+            color: #fff;
+            transition: 0.15s;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+
+            &:hover {
+              opacity: 1;
+            }
+
+            .statistics {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+            }
+          }
+        }
+      }
+
+      .private_section {
+        height: 400px;
+        gap: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        p {
+          margin: 0 20px;
+          color: #71717a;
+        }
+      }
+    }
+  }
+}
+
+.post_preloader {
+  position: fixed;
+  height: 100px;
+  top: 0;
+}
+
+.post_loader {
+  height: 100px;
+}
+
+@media (max-width: 820px) {
+  .container {
+    .profile {
+      .user_infos {
+        .statistics {
+          gap: 0 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    order: 1;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 526px) {
+  .container {
+    .profile {
+      .user_infos {
+        gap: 12px;
+
+        header {
+          .controlers {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-bottom: 10px;
+            gap: 10px 10px;
+          }
+        }
+
+        .statistics {
+          gap: 0;
+
+          li {
+            width: 100%;
+          }
+        }
+
+        .desc {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .container {
+    .profile {
+      padding: 20px 0 20px;
+      grid-template-columns: auto minmax(56px, 500px);
+
+      .user_infos {
+        header {
+          margin-bottom: -10px;
+
+          h1 {
+            font-size: 16px;
+          }
+        }
+
+        .statistics {
+          li {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .tabs {
+      .categories {
+        gap: 20px;
+        justify-content: space-around;
+
+        .categorie,
+        .active_categorie {
+          font-size: 14px;
+          padding: 20px 0;
+
+          img {
+            width: 12px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

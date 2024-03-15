@@ -1,0 +1,185 @@
+@import '../../styles/switch.module.scss';
+
+// aside version
+.aside_setting_title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .active_setting_categorie,
+  .setting_categorie {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    border-radius: 8px;
+    gap: 10px;
+    transition: 0.2s;
+
+    &:hover {
+      background: var(--lightGray-basc);
+    }
+
+    &.active_setting_categorie {
+      background: var(--lightGray-basc);
+    }
+
+    .categorie_title {
+      font-size: var(--font-size);
+      color: var(--color-text);
+    }
+  }
+}
+
+// categorie
+.categorie {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0 12px;
+  gap: 4px;
+
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  p {
+    color: #71717a;
+    font-size: 16px;
+  }
+}
+
+// Edit profile page
+.container {
+  display: grid;
+
+  .setting {
+    display: flex;
+    flex-direction: column;
+    max-width: 640px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0px var(--padding-page);
+
+    form {
+      .setting_change_avatar {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 14px 20px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+
+        .user_icon {
+          aspect-ratio: 1;
+          object-fit: cover;
+          background-size: cover;
+          border-radius: 50%;
+          width: 56px;
+          height: auto;
+        }
+
+        label {
+          border-radius: 8px;
+          font-weight: 500;
+          background: #eee;
+          padding: 8px 18px;
+          transition: 0.15s;
+        }
+      }
+
+      .no_view {
+        display: none;
+      }
+
+      input {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 14px 20px;
+        width: 100%;
+        transition: all 0.2s ease 0s;
+
+        &:invalid {
+          border: 1px solid red;
+        }
+
+        &:focus {
+          border: 1px solid #2885ff;
+        }
+      }
+
+      .setting_textarea_box {
+        position: relative;
+
+        textarea {
+          resize: none;
+          width: 100%;
+          height: 160px;
+          outline: none;
+          border: 1px solid var(--border-color);
+          border-radius: 8px;
+          padding: 14px 72px 14px 20px;
+          transition: all 0.2s ease 0s;
+
+          &:invalid {
+            border: 1px solid red;
+          }
+
+          &:focus {
+            border: 1px solid #2885ff;
+          }
+        }
+
+        .desc_length {
+          position: absolute;
+          right: 18px;
+          bottom: 12px;
+          color: #717171;
+          font-size: 14px;
+        }
+      }
+
+      .setting_form_desc {
+        color: #71717a;
+        font-size: 16px;
+        padding: 16px 0 20px;
+      }
+
+      .display_messages {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid var(--border-color);
+        padding: 14px 20px;
+        border-radius: 8px;
+        gap: 8px;
+
+        .more_information {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+
+          .more_information_title {
+            color: #000;
+            font-size: 16px;
+          }
+
+          .more_information_text {
+            color: #71717a;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .update_profile_btn {
+        margin-top: 20px;
+      }
+    }
+  }
+}
