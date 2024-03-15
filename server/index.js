@@ -20,6 +20,7 @@ app.use(
   cors({
     origin: ['https://socila-media-client.vercel.app'],
     credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 )
 app.use('/images', express.static(path.join(__dirname, 'images')))
