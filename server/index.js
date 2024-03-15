@@ -3,7 +3,7 @@ const express = require('express')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const path = require('path')
-const http = require('http')
+const https = require('https')
 const mongoose = require('mongoose')
 const socket = require('./socket/socket')
 const authRouter = require('./routes/authRouter')
@@ -16,7 +16,13 @@ const app = express()
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }))
+app.use(
+  cors({
+    origin: ['https://socila-media-client.vercel.app'],
+    methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
+    credentials: true,
+  })
+)
 app.use('/images', express.static(path.join(__dirname, 'images')))
 
 // routes
@@ -25,7 +31,7 @@ app.use('/user', userRouter)
 app.use('/post', postRouter)
 app.use('/chat', chatRouter)
 
-const server = http.createServer(app)
+const server = https.createServer(app)
 socket(server)
 
 const RunServer = async () => {
