@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const path = require('path')
 const http = require('http')
+const cookie = require('cookie')
 const mongoose = require('mongoose')
 const socket = require('./socket/socket')
 const authRouter = require('./routes/authRouter')
@@ -21,6 +22,8 @@ app.use(
     origin: ['https://socila-media-client.vercel.app'],
     methods: ['POST', 'GET', 'PUT', 'DELETE'],
     credentials: true,
+    exposedHeaders: ['set-cookie'],
+    secure: true,
   })
 )
 app.use('/images', express.static(path.join(__dirname, 'images')))
