@@ -22,7 +22,7 @@ const Profile: React.FC<NavState> = ({ addition }) => {
       >
         <Image
           className={style.user_icon}
-          src={meData.avatar ? `${process.env.serverUrl}${meData.avatar}` : avatarIcon}
+          src={meData.avatar ? `https://social-media-server-ashy.vercel.app/${meData.avatar}` : avatarIcon}
           width={100}
           height={100}
           alt="Avatar"
