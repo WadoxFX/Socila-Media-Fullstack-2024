@@ -2,7 +2,13 @@ const { Server } = require('socket.io')
 const Chat = require('../models/chatSchema')
 
 module.exports = (server) => {
-  const io = new Server(server, { cors: { origin: process.env.CLIENT_URL } })
+  const io = new Server(server, {
+    cors: {
+      origin: ['https://socila-media-client.vercel.app'],
+      methods: ['POST', 'GET', 'PUT', 'DELETE'],
+      credentials: true,
+    },
+  })
   const people = {}
 
   io.on('connection', (socket) => {
