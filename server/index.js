@@ -24,6 +24,8 @@ app.use(
     credentials: true,
     exposedHeaders: ['set-cookie'],
     secure: true,
+    optionsSuccessStatus: 200,
+    preflightContinue: false,
   })
 )
 app.use('/images', express.static(path.join(__dirname, 'images')))

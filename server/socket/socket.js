@@ -9,6 +9,8 @@ module.exports = (server) => {
       credentials: true,
       exposedHeaders: ['set-cookie'],
       secure: true,
+      optionsSuccessStatus: 200,
+      preflightContinue: false,
     },
   })
   const people = {}
