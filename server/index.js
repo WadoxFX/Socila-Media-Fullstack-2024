@@ -20,7 +20,7 @@ app.use(cookieParser())
 app.use(
   cors({
     origin: ['https://socila-media-client.vercel.app'],
-    methods: ['POST', 'GET', 'PUT', 'DELETE'],
+    methods: ['POST', 'GET', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     credentials: true,
     exposedHeaders: ['set-cookie'],
     secure: true,
@@ -33,6 +33,15 @@ app.use('/auth', authRouter)
 app.use('/user', userRouter)
 app.use('/post', postRouter)
 app.use('/chat', chatRouter)
+
+app.get('/', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Credentials', 'true')
+  res.setHeader('Access-Control-Max-Age', '1800')
+  res.setHeader('Access-Control-Allow-Headers', 'content-type')
+  res.setHeader('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, PATCH, OPTIONS')
+  res.send('Server worker')
+})
 
 const server = http.createServer(app)
 socket(server)

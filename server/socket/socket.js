@@ -5,7 +5,7 @@ module.exports = (server) => {
   const io = new Server(server, {
     cors: {
       origin: ['https://socila-media-client.vercel.app'],
-      methods: ['POST', 'GET', 'PUT', 'DELETE'],
+      methods: ['POST', 'GET', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
       credentials: true,
       exposedHeaders: ['set-cookie'],
       secure: true,
