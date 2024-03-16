@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    clientUrl: 'http://localhost:3000',
+    clientUrl: 'https://socila-media-client.vercel.app',
     serverUrl: 'https://social-media-server-ashy.vercel.app/',
   },
   images: {

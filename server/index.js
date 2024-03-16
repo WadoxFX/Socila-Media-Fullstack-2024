@@ -19,7 +19,7 @@ app.use(cookieParser())
 app.use(
   cors({
     origin: ['https://socila-media-client.vercel.app'],
-    methods: ['POST', 'GET'],
+    methods: ['POST', 'GET', 'PUT', 'DELETE'],
     credentials: true,
   })
 )
