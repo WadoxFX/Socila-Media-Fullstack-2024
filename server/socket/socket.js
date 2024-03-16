@@ -7,6 +7,8 @@ module.exports = (server) => {
       origin: ['https://socila-media-client.vercel.app'],
       methods: ['POST', 'GET', 'PUT', 'DELETE'],
       credentials: true,
+      exposedHeaders: ['set-cookie'],
+      secure: true,
     },
   })
   const people = {}
