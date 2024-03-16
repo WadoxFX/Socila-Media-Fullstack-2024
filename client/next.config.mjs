@@ -5,9 +5,9 @@ const nextConfig = {
     serverUrl: 'https://social-media-server-ashy.vercel.app/',
   },
   images: {
-    remotePatterns: [{ hostname: 'localhost' }],
+    remotePatterns: [{ hostname: 'socila-media-client.vercel.app' }],
   },
-  reactStrictMode: false
+  reactStrictMode: false,
 }
 
 export default nextConfig
